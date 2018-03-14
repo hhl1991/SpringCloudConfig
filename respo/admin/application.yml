@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: admin-server
+  jackson:
+      deserialization: true
+  #指定监控的服务名称
+  boot:
+    admin:
+      discovery:
+        services: admin-server,eureka-server,service-zuul,member-mysql,member-consumer
+      username: admin   #These two are needed so that the client
+      password: admin         #can register at the protected server api
+      client:
+        metadata:
+          user.name: admin   #These two are needed so that the server
+          user.password: admin     #can access the proteceted client endpoints
+server:
+  port: 9527
+eureka:
+  instance:
+    hostname: exdl1
+    home-page-url: http://${eureka.instance.hostname}:${server.port}/
+  client:
+      service-url:
+        defaultZone: http://exdl1:8765/eureka/,http://exdl2:8765/eureka/,http://exdl3:8765/eureka/
+#允许信息被监控
+management:
+  security:
+    enabled: false
+endpoints:
+  health:
+    sensitive: false
+#设置访问权限
+security:
+  user:
+    name: admin
+    password: admin
+  basic:
+    enabled: false
+logging:
+  file: ./target/test.log
