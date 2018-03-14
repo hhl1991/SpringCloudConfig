@@ -22,7 +22,7 @@ eureka:
     home-page-url: http://${eureka.instance.hostname}:${server.port}/
   client:
       service-url:
-        defaultZone: http://exdl1:8765/eureka/,http://exdl2:8765/eureka/,http://exdl3:8765/eureka/
+        defaultZone: http://admin:admin@exdl1:8765/eureka/,http://admin:admin@exdl2:8765/eureka/,http://admin:admin@exdl3:8765/eureka/
 #允许信息被监控
 management:
   security:
