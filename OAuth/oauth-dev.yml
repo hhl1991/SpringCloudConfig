@@ -43,4 +43,6 @@ logging:
     org:
       springframework:
         web: info
-
+spring: 
+  profiles: 
+    active: oauth-dev
