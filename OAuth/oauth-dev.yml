@@ -19,21 +19,21 @@ spring:
 
 eureka:
   instance:
-    prefer-ip-address: true #ʹ��IPע��
+    prefer-ip-address: true 
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
   client:
       service-url:
         defaultZone: http://admin:admin@exdl1:8765/eureka/,http://admin:admin@exdl2:8765/eureka/,http://admin:admin@exdl3:8765/eureka/
-###actuator��ص� start####
+
 endpoints:
   health:
     sensitive: false
     enabled: true
-##Ĭ������ºܶ�˵��ǲ�������ʵģ��᷵��401:Unauthorized
+
 management:
   security:
     enabled: false
-###actuator��ص� end####
+
 security:
   oauth2:
     resource:
