@@ -15,6 +15,7 @@ spring:
     refix: classpath:/templates/
     suffix: .html
     mode: HTML5
+  profiles: oauth
 
 eureka:
   instance:
@@ -43,5 +44,4 @@ logging:
     org:
       springframework:
         web: info
-spring: 
-  profiles: oauth
+  
